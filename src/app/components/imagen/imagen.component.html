@@ -1,0 +1,27 @@
+<body>
+    <header>
+        <h1 class="titulo">Prueba técnica</h1>
+    </header>
+
+    <div class="main">
+        <canvas width="400" height="300" #canvasval class="hideData" [class.displayData]="displayData"
+            (click)="getPixel($event)">
+        </canvas>
+
+        <div class="data" [class.displayData]="displayData">
+            <h2>Preview</h2>
+            <div #colboxval class="colorval" [class.displayCol]="displayCol"></div>
+
+            <input type='file' accept=".png,.jpeg,.jpg" (change)="readUrl($event)">
+            <br /><br />
+            <h2>Pixel position:  X: {{x}}, Y: {{y}}</h2>
+            <h2>HEX Value:</h2>
+            <input type="text" value={{_hexval}}>
+            <h2>RGBA Value:</h2>
+            <input type="text" value={{_rgbaval}}>
+            <h2>Image Name: {{imagen_name}} </h2>
+            <h2>Size in Kb: {{imagen_size}} </h2>
+            <h2>Type: {{imagen_type}} </h2>
+        </div>
+    </div>
+</body>
